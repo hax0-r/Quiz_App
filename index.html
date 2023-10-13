@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questions</title>
+    <link rel="stylesheet" href="./Quiz.css">
+    <!-- ---font awesome--- -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- ---font awesome--- -->
+</head>
+</head>
+
+<body>
+    <div class="full">
+        <div class="container" >
+            <h4>Made By Talha</h4>
+            <h1>Welcome To Quiz App</h1>
+            <p>If Are you ready then hit the start button, Go ahead</p>
+            <a href="#" id="start">
+                <button>Start <i class="fa-solid fa-circle-play"></i></button>
+            </a>
+            <video autoplay muted id="videoId" loop>
+                <source src="movie.mp4" type="video/mp4">
+            </video>
+        </div>
+
+            <div class="round">
+                <h1>1</h1>
+                <h1>Word Association Test</h1>
+                <p>round</p>
+            </div>
+            <div class="question">
+                <video autoplay muted loop>
+                    <source src="./imgs/question.mp4" type="video/mp4">
+                </video>
+                <div class="btn">
+                    <button>Round 1</button>
+                    <!-- <h1>Word Association test</h1> -->
+                    <button>100 Points</button>
+                </div>
+                <div class="ques">
+                    <div></div>
+                    <h4>Q1: Here is your first question</h4>
+                </div>
+                <div class="options">
+                    <div class="fl">
+                        <div></div>
+                        <button>Option 1</button>
+                        <button>Option 2</button>
+                    </div>
+                    <div class="fl">
+                        <div></div>
+                        <button>Option 3</button>
+                        <button>Option 4</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+    integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    
+    let start = document.getElementById("start")
+    let full = document.querySelector(".full")
+    let question = document.querySelector(".question")
+    
+    start.addEventListener('click',() => {
+        gsap.to(".container", {
+            y: "-100%",
+            opacity: 0,
+            // scale: 0,
+            duration: 1.5
+        })
+        gsap.to(".round", {
+            delay: 2,
+            opacity: 0,
+            duration: 1.5,
+        })
+
+        full.classList.remove("full");
+        
+        setTimeout(function() {
+          question.style.zIndex="9999999999999";
+
+}, 2500);
+    })
+    
+</script>
+
+</html>
